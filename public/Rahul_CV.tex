@@ -1,0 +1,163 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Rahul — ATS-Friendly CV Template (LaTeX)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[a4paper, top=0.75in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\definecolor{cvblue}{HTML}{1B4F72}
+\definecolor{darkgray}{HTML}{2C3E50}
+\definecolor{midgray}{HTML}{5D6D7E}
+
+\hypersetup{colorlinks=true, urlcolor=cvblue, linkcolor=cvblue}
+
+\titleformat{\section}
+  {\color{cvblue}\bfseries\large}{}{0em}{\MakeUppercase}
+  [\color{cvblue}\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+\pagestyle{empty}
+
+\setlist[itemize]{leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=3pt, label=\textbullet}
+
+\newcommand{\cventry}[3]{%
+  \vspace{4pt}%
+  \noindent\textbf{\color{darkgray}#1}\hfill{\color{midgray}\textit{#3}}%
+  \if\relax\detokenize{#2}\relax\else\\[1pt]\textit{\color{midgray}#2}\fi
+  \vspace{2pt}%
+}
+
+\newcommand{\skillrow}[2]{%
+  \textbf{\color{cvblue}#1} & {\color{darkgray}#2} \\[3pt]%
+}
+
+\begin{document}
+
+%% ── HEADER ──────────────────────────────────────
+\begin{center}
+  {\Huge\bfseries\color{cvblue} RAHUL}\\[4pt]
+  {\color{midgray} Computer Science \& Engineering Student \ $|$ \ IUB, Bangladesh}\\[4pt]
+  {\color{midgray}
+    Email: \href{mailto:your.email@iub.edu.bd}{your.email@iub.edu.bd} \quad
+    Phone: +880 XXXXXXXXXX \quad
+    GitHub: \href{https://github.com/your-username}{github.com/your-username} \quad
+    Dhaka, Bangladesh
+  }
+\end{center}
+
+\vspace{4pt}
+
+%% ── CAREER OBJECTIVE ──────────────────────────────
+\section{Career Objective}
+
+Motivated Computer Science \& Engineering student at Independent University, Bangladesh,
+seeking an internship or entry-level opportunity in software development or IT.
+Demonstrated ability to build full-stack web applications, work with AI/NLP tools,
+and deliver team-based software projects under tight deadlines.
+Eager to contribute technical skills and grow through hands-on industry experience.
+
+%% ── EDUCATION ────────────────────────────────────
+\section{Education}
+
+\cventry{B.Sc. in Computer Science \& Engineering}{Independent University, Bangladesh (IUB)}{2022 -- Present}
+\begin{itemize}
+  \item CGPA: \textbf{3.35 / 4.00}
+  \item Relevant Courses: Operating Systems, Theory of Computation, System Analysis \& Design,
+        Web Applications \& Internet, Modern Sensor Technology
+\end{itemize}
+
+%% ── PROJECTS ────────────────────────────────────
+\section{Projects}
+
+\cventry{ResumeSmart -- AI-Powered Resume Screening Web App}{}{2024 -- 2025}
+\begin{itemize}
+  \item Built a full-stack web application using Flask (Python) that automatically screens resumes
+        using a custom TF-IDF NLP engine --- no external AI APIs, per instructor requirement
+  \item Implemented PDF parsing (pdfplumber), keyword extraction (spaCy), and candidate ranking from scratch
+  \item Integrated a Groq-based AI chatbot for recruiter interaction
+  \item Deployed live at \href{https://resumesmart.onrender.com}{resumesmart.onrender.com};
+        sole developer handling architecture, backend, and deployment
+\end{itemize}
+
+\cventry{Blind Navigation Assistant -- IoT Hardware Project}{}{2025}
+\begin{itemize}
+  \item Designed and built a wearable navigation device for visually impaired users using
+        ESP8266, HC-SR04 ultrasonic sensor, DFPlayer Mini (audio feedback), and NEO-6M GPS module
+  \item Resolved SoftwareSerial conflicts and SD card compatibility issues through hands-on hardware debugging
+\end{itemize}
+
+\cventry{Flood Early Warning System -- Group Project}{Team Lead $\cdot$ 4 Members}{2024}
+\begin{itemize}
+  \item Led a 4-member team to design a complete system using DFDs, UML use case,
+        activity, and sequence diagrams
+  \item Delivered full System Analysis \& Design documentation including CRUD matrix
+        and requirement specifications
+\end{itemize}
+
+\cventry{AI Mental Health Monitoring System -- Group Project}{Team Lead}{2024}
+\begin{itemize}
+  \item Led development of a web-based mental health monitoring platform using HTML, PHP, CSS, and JavaScript
+  \item Coordinated team tasks, managed code integration, and delivered final presentation
+\end{itemize}
+
+\cventry{Catering Service System -- OOP Course Project}{}{2023}
+\begin{itemize}
+  \item Designed and implemented a Java-based catering service system applying OOP principles:
+        inheritance, encapsulation, and polymorphism
+\end{itemize}
+
+\cventry{Multi-threaded \& Process-based OS Programs}{}{2025}
+\begin{itemize}
+  \item Implemented fork/pipe IPC, Win32 processes, pthreads, multilevel queue scheduling,
+        and real-time scheduling (RM \& EDF) in C and Java
+  \item Developed a Linux kernel module as part of Operating Systems coursework
+\end{itemize}
+
+%% ── TECHNICAL SKILLS ────────────────────────────
+\section{Technical Skills}
+
+\begin{tabular}{@{} >{\bfseries\color{cvblue}}p{2.8cm} @{\hspace{6pt}} p{11cm} @{}}
+  \skillrow{Languages:}{Python, C, Java, JavaScript, HTML, CSS, PHP}
+  \skillrow{Frameworks:}{Flask, Bootstrap}
+  \skillrow{AI / NLP:}{spaCy, scikit-learn, TF-IDF, pdfplumber}
+  \skillrow{Tools:}{Git, GitHub, Linux, VS Code}
+  \skillrow{Hardware:}{ESP8266, HC-SR04, NEO-6M GPS, Arduino IDE}
+  \skillrow{Databases:}{MySQL (basic), SQLite}
+  \skillrow{Design:}{Graphic Design (Canva, Photoshop -- basic), Figma (basic)}
+\end{tabular}
+
+%% ── LEADERSHIP & ACTIVITIES ──────────────────────
+\section{Leadership \& Activities}
+
+\cventry{Graphics Designer -- University Club}{Independent University, Bangladesh}{2022 -- 2023}
+\begin{itemize}
+  \item Created promotional materials, event posters, and social media graphics for club activities
+  \item Collaborated with club members to deliver consistent branding for events
+\end{itemize}
+
+%% ── KEY STRENGTHS ───────────────────────────────
+\section{Key Strengths}
+
+\begin{itemize}
+  \item Fast self-learner --- taught myself Python, Flask, and NLP from scratch for a production web app
+  \item Strong project execution --- delivered multiple academic projects under deadline as team lead
+  \item Problem-solver --- debugged complex hardware and software issues independently
+  \item Collaborative team player with experience leading 4-person project groups
+\end{itemize}
+
+%% ── REFERENCES ──────────────────────────────────
+\section{References}
+
+\textit{\color{midgray}Available upon request.}
+
+\end{document}

@@ -1,17 +1,17 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-function getScore(pop, humidity, clouds) {
+function getScore(pop: number, humidity: number, clouds: number) {
   return Math.round((pop * 0.6 + (humidity / 100) * 0.2 + (clouds / 100) * 0.2) * 100);
 }
 
-function getDecision(score) {
+function getDecision(score: number) {
   if (score >= 60) return { text: 'Dangerous', color: '#ef4444', bg: 'rgba(239,68,68,0.15)' };
   if (score >= 35) return { text: 'Moderate', color: '#fbbf24', bg: 'rgba(251,191,36,0.15)' };
   return { text: 'Safe', color: '#34d399', bg: 'rgba(52,211,153,0.15)' };
 }
 
-function getWeatherBg(desc) {
+function getWeatherBg(desc: string) {
   if (!desc) return ['#1a1a2e', '#16213e'];
   const d = desc.toLowerCase();
   if (d.includes('thunder') || d.includes('storm')) return ['#0d0d1a', '#1a0a2e'];
@@ -21,7 +21,7 @@ function getWeatherBg(desc) {
   return ['#1a1a2e', '#16213e'];
 }
 
-function getWeatherEmoji(desc) {
+function getWeatherEmoji(desc: string) {
   if (!desc) return '🌡️';
   const d = desc.toLowerCase();
   if (d.includes('thunder')) return '⛈️';
