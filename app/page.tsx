@@ -38,7 +38,7 @@ function getWeatherEmoji(desc: string) {
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-async function fetchWeather(lat, lon, name, key) {
+async function fetchWeather(lat: number, lon: number, name: string, key: string) {
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
   );
@@ -80,7 +80,7 @@ async function fetchWeather(lat, lon, name, key) {
   };
 }
 
-function ForecastWave({ forecast }) {
+function ForecastWave({ forecast }: { forecast: { day: string; temp: number; emoji: string }[] }) {
   if (!forecast || forecast.length === 0) return null;
   const temps = forecast.map(f => f.temp);
   const min = Math.min(...temps) - 2;
@@ -134,7 +134,7 @@ function ForecastWave({ forecast }) {
   );
 }
 
-function WeatherCard({ w, onRemove, isMain }) {
+function WeatherCard({ w, onRemove, isMain }: { w: any; onRemove: () => void; isMain: boolean }) {
   const [bg] = useState(w.bg);
 
   if (isMain) {
